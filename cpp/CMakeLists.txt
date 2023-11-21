@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.21)
 project(gilded-rose-refactoring-kata-cpp)
 
 # Load FetchContent module.
@@ -29,7 +29,8 @@ if (MSVC)
 endif()
 
 # uncomment this line to enable coverage measurements using gcov
-# set(CMAKE_CXX_FLAGS "--coverage")
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_FLAGS "--coverage")
 
 enable_testing()
 add_subdirectory(src)

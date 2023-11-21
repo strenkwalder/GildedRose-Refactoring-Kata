@@ -1,17 +1,7 @@
-#include <string>
 #include <vector>
+#include "items.h"
 
 using namespace std;
-
-class Item
-{
-public:
-    string name;
-    int sellIn;
-    int quality;
-    Item(string name, int sellIn, int quality) : name(name), sellIn(sellIn), quality(quality) 
-    {}
-};
 
 class GildedRose
 {

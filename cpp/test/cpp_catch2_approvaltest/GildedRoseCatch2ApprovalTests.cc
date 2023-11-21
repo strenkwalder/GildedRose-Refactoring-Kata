@@ -1,6 +1,7 @@
 #define APPROVALS_CATCH
 #include "ApprovalTests.hpp"
 #include "GildedRose.h"
+#include "items.h"
 
 std::ostream& operator<<(std::ostream& os, const Item& obj)
 {
