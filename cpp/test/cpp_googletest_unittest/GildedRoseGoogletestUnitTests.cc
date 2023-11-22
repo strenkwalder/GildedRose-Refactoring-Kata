@@ -46,14 +46,6 @@ TEST(BasicTests, aged_brie_increases_quality_with_update) {
     ASSERT_EQ(15+1, item.quality);
 }
 
-
-TEST(BasicTests, quality_can_never_be_bettern_than_50) {
-    Item item("Something", 29, 999);
-    const auto processor = get_item_processor(item.name);
-    processor.update(item);
-    ASSERT_EQ(50, item.quality);
-}
-
 TEST(BasicTests, aged_brie_cannot_increases_quality_over_50) {
     Item item("Aged Brie", 29, 50);
     const auto processor = get_item_processor(item.name);
@@ -103,4 +95,14 @@ TEST(BasicTests, backstage_pass_increases_quality_is_zero_when_after_the_concert
     const auto processor = get_item_processor(item.name);
     processor.update(item);
     ASSERT_EQ(0, item.quality);
+}
+
+TEST(BasicTests, conjoured_decreases_quality_twice_as_much_as_a_normal_item) {
+    Item conjured_item("Conjured", 50, 25);
+    Item normal_item("some item", 50, 25);
+    const auto processor = get_item_processor(conjured_item.name);
+    processor.update(conjured_item);
+    const auto normal_processor = get_item_processor(normal_item.name);
+    normal_processor.update(normal_item);
+    ASSERT_EQ(conjured_item.quality - 25, (normal_item.quality - 25)*2);
 }

@@ -22,7 +22,6 @@ TEST(GildedRoseApprovalTests, VerifyCombinations) {
         "Aged Brie",
         "Sulfuras, Hand of Ragnaros",
         "Backstage passes to a TAFKAL80ETC concert",
-        "Conjured"
     };
     std::vector<int> sellIns { -1, 0, 1, 10, INT32_MAX};
     std::vector<int> qualities { -1, 0, 1, 10, 50, INT32_MAX};

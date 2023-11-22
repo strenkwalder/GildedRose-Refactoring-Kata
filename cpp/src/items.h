@@ -35,7 +35,7 @@ class ItemProcessor {
     SellInProcessor process_sellIn_strategy;
     QualityProcessor process_quality_strategy;
 
-    int get_new_sellIn(const Item &item) const;
+    int get_new_selling_days(const Item &item) const;
     int get_new_quality(const Item &item) const;
 
 public:
